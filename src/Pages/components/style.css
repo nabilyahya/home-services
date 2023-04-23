@@ -1,0 +1,22 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  background-image: url("https://assets.website-files.com/5dd827bbc07b1656e06b16d8/61e40bf91e3d2a43812a5e15_Depositphotos_106131480_L%20(1).jpg"); /* Replace with the path to your hero image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}

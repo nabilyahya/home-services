@@ -1,0 +1,12 @@
+/* Center the cards */
+.home-page-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Add space between the cards */
+.home-page-col {
+  padding-left: 15px;
+  padding-right: 15px;
+}
