@@ -20,3 +20,26 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
+.service-hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  background-image: url("https://www.thaqfny.com/wp-content/uploads/2021/05/%D8%AA%D9%86%D8%B8%D9%8A%D9%81-%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A7%D9%85%D9%8A%D9%83.jpeg"); /* Replace with the path to your hero image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.service-hero-section h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.service-hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}

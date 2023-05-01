@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import TextInput from "./components/TextInput";
 import SelectInput from "./components/SelectInput";
+import axios from "axios";
 export const WorkerSginUp = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const register = async () => {
+    try {
+      const response = await axios.post("http://localhost:8000/api/register", {
+        ...formData,
+        role: "worker",
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       {" "}

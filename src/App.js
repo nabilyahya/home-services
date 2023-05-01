@@ -19,57 +19,64 @@ import { CustomerSginUp } from "./Pages/CustomerSginUp";
 import { HomePage } from "./Pages/HomePage";
 import { AboutUs } from "./Pages/AboutUs";
 import Footer from "./Pages/components/Footer";
+import ServiceDetiles from "./Pages/ServiceDetiles";
+import { AuthProvider } from "./util/AuthContext";
 function App() {
   const [isSginUpOpen, setIsSginUpOpen] = useState(false);
   return (
-    <Router className="main-content">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          Ur-Services
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <Link to="/" class="nav-link">
-                Home
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to="/AoutUs" class="nav-link">
-                About
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to="/SginUp" class="nav-link">
-                SignUp
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/AoutUs" element={<AboutUs />} />
-        <Route
-          path="/SginUp"
-          element={<SginUp setIsSginUpOpen={setIsSginUpOpen} />}
-        />
-        <Route path="/WorkerSginUp" element={<WorkerSginUp />} />
-        <Route path="/CustomerSginUp" element={<CustomerSginUp />} />
-      </Routes>
-      {!isSginUpOpen && <Footer />}
-    </Router>
+    <React.StrictMode>
+      <AuthProvider>
+        <Router className="main-content">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              Ur-Services
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <Link to="/" class="nav-link">
+                    Home
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link to="/AoutUs" class="nav-link">
+                    About
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link to="/SginUp" class="nav-link">
+                    SignUp
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/AoutUs" element={<AboutUs />} />
+            <Route
+              path="/SginUp"
+              element={<SginUp setIsSginUpOpen={setIsSginUpOpen} />}
+            />
+            <Route path="/WorkerSginUp" element={<WorkerSginUp />} />
+            <Route path="/CustomerSginUp" element={<CustomerSginUp />} />
+            <Route path="/ServiceDetiles" element={<ServiceDetiles />} />
+          </Routes>
+          {!isSginUpOpen && <Footer />}
+        </Router>
+      </AuthProvider>
+    </React.StrictMode>
   );
 }
 
